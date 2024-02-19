@@ -114,8 +114,7 @@ async def rename_doc(bot, update):
             try:
                 await bot.edit_message_text(
                     text=Translation.SAVED_RECVD_DOC_FILE,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
+                    chat_id=update.chat.id
                 )
             except:
                 pass
@@ -123,8 +122,7 @@ async def rename_doc(bot, update):
             os.rename(the_real_download_location, new_file_name)
             await bot.edit_message_text(
                 text=Translation.UPLOAD_START,
-                chat_id=update.chat.id,
-                m_id=a.m_id
+                chat_id=update.chat.id
                 )
             logger.info(the_real_download_location)
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
@@ -186,8 +184,7 @@ async def rename_doc(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
-            reply_to_message_id=update.message_id
+            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE
        )
     
 
