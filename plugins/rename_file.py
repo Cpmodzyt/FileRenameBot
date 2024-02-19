@@ -116,7 +116,7 @@ async def rename_doc(bot, update):
                     text=Translation.SAVED_RECVD_DOC_FILE,
                     chat_id=update.chat.id,
                     reply_to_message_id
-                ),
+                )
             except:
                 pass
             new_file_name = download_location + file_name
